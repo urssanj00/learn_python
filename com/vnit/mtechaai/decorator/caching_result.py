@@ -1,7 +1,9 @@
 from functools import wraps
 
+
 def caching_result(func):
     cache_dictionary = {}
+# test
 
     @wraps(func)
     def wrapper(*args, **kwargs):
@@ -20,15 +22,16 @@ def caching_result(func):
     return wrapper_print
 
 
-
 # usage
 @caching_result
 def add(p, q):
     return p + q
 
+
 @caching_result
 def p(p, q):
-    return str(p) +":"+ str(q)
+    return str(p) + ":" + str(q)
+
 
 res = p(99, 100)
 result1 = add(1, 2)
